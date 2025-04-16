@@ -24,11 +24,7 @@ The dataset includes the following columns:
 1. **Data Sorting**: Sorted the data by the date of application to analyze trends over time.
 2. **Month Calculation**: Used the `TEXT` function to extract the month from the application date.
 3. **Monthly Application Counts**: Used `COUNTIF` to calculate the number of applications received each month.
-4. **Summary Statistics**: 
-   - Total applications: `=SUM(B2:B13)`
-   - Minimum applications: `=MIN(B2:B13)`
-   - Maximum applications: `=MAX(B2:B13)`
-   - Average applications: `=AVERAGE(B2:B13)`
+4. **Summary Statistics**: Total applications, Minimum applications, Maximum applications, Average applications.
 
 ## Results
 
