@@ -1,66 +1,79 @@
-# Cosmetics Inc. - Data Cleaning Practice
+# Cosmetics Inc. - Data Cleaning and Analysis Practice
 
 ## Overview
 
-This guide provides step-by-step instructions for performing common data cleaning tasks in the **Cosmetics Inc. - Data for Cleaning** dataset. These tasks include using the `LEFT`, `RIGHT`, `MID`, `CONCATENATE`, and `TRIM` functions, as well as using the `SPLIT` function to correct errors. Follow the steps to clean and prepare the data for analysis.
+This document provides step-by-step instructions for cleaning and analyzing the **Cosmetics Inc. - Data for Cleaning** dataset. It covers various spreadsheet functions such as `COUNTIF`, `LEN`, `MID`, `CONCATENATE`, `TRIM`, `VLOOKUP`, and `PIVOT TABLE`. These techniques are essential for improving data organization, identifying errors, and summarizing data effectively.
 
 ## Steps
 
-### 1. **Use the LEFT Function**
+### 1. **The LEFT and RIGHT Functions**
 
-The `LEFT` function extracts a specified number of characters from the left side of a text string.
+#### a. **LEFT Function**  
+- In **cell H1**, enter **Left**.
+- In **cell H2**, enter `=LEFT(A2, 5)` to extract the first five characters from **A2**.
+- Use the fill handle to drag the formula down to the rest of the cells in the column.
 
-- **Select cell H1** and enter the label **Left**.
-- In **cell H2**, enter the formula: `=LEFT(A2, 5)` to extract the first five characters from **A2**. This will return the substring "51993".
-- Drag the **fill handle** (small circle in the corner) down to automatically populate the rest of the column.
+#### b. **RIGHT Function**  
+- In **cell I1**, enter **Right**.
+- In **cell I2**, enter `=RIGHT(A2, 4)` to extract the last four characters from **A2**.
+- Use the fill handle to drag the formula down to the rest of the cells in the column.
 
-### 2. **Use the RIGHT Function**
+### 2. **The MID Function**
 
-The `RIGHT` function extracts a specified number of characters from the right side of a text string.
+- In **cell J1**, enter **Mid**.
+- In **cell J2**, enter `=MID(D2, 4, 2)` to extract the two-letter state code starting at character four in **D2**.
+- Double-click the fill handle to apply the formula to the rest of the column.
 
-- **Select cell I1** and enter the label **Right**.
-- In **cell I2**, enter the formula: `=RIGHT(A2, 4)` to extract the last four characters from **A2**. This will return the substring "Masc".
-- Drag the **fill handle** down to automatically populate the rest of the column.
+### 3. **The CONCATENATE Function**
 
-### 3. **Use the MID Function**
+- In **cell K1**, enter **Concatenate**.
+- In **cell K2**, enter `=CONCATENATE(H2, I2)` to combine the values from **H2** and **I2**.
+- Double-click the fill handle to populate the rest of the column.
 
-The `MID` function extracts a segment from the middle of a text string.
+### 4. **The TRIM Function**
 
-- **Select cell J1** and enter the label **Mid**.
-- In **cell J2**, enter the formula: `=MID(D2, 4, 2)` to extract the two-letter state code starting at the 4th character in **D2**.
-- Double-click the **fill handle** to automatically populate the rest of the column.
+- In **cell L1**, enter **Trim**.
+- In **cell L2**, enter `=TRIM(C2)` to remove any leading, trailing, or repeated spaces in the data from **C2**.
+- Double-click the fill handle to apply the formula to the rest of the column.
 
-### 4. **Use the CONCATENATE Function**
+### 5. **Use Split to Fix Numbers Stored as Text**
 
-The `CONCATENATE` function combines two or more text strings into one.
+- Open the **Cosmetics Inc. - Data for Cleaning** dataset and locate **cell F12**, which contains an error.
+- Select **column E (Orders)**, then navigate to **Data > Split text to columns**.
+- This removes the quotation marks, allowing the spreadsheet to recognize the data as a number, fixing the error in **F12**.
 
-- **Select cell K1** and enter the label **Concatenate**.
-- In **cell K2**, enter the formula: `=CONCATENATE(H2, I2)` to combine the values from columns **H** and **I**.
-- Double-click the **fill handle** to automatically populate the rest of the column.
+### 6. **Pivot Tables**
 
-### 5. **Use the TRIM Function**
+Pivot tables summarize data for quick analysis.
+- Select the data in **Sheet 1** (cells A1 to F31).
+- Go to **Insert > Pivot Table** and choose **New sheet**.
+- In the **Pivot Table editor**:
+  - Add **Total** to Rows.
+  - Sort by **Descending** to see the most profitable items at the top.
+  - Add **Products** to Rows.
+  - The most ordered products should now appear at the top.
 
-The `TRIM` function removes leading, trailing, and repeated spaces from text.
+### 7. **VLOOKUP**
 
-- **Select cell L1** and enter the label **Trim**.
-- In **cell L2**, enter the formula: `=TRIM(C2)` to remove unnecessary spaces from **C2**.
-- Double-click the **fill handle** to automatically populate the rest of the column.
+`VLOOKUP` helps find corresponding values in a different sheet.
+- In **Sheet 1**, select **cell H2**.
+- Enter `=VLOOKUP(A2, 'Sheet 2'!A1:B31, 2, FALSE)` to search for the product code in **A2** and return the corresponding product name from **Sheet 2**.
+- Use the fill handle to apply the formula to the remaining rows.
 
-### 6. **Use Split to Fix Numbers Stored as Text**
+### 8. **Plotting**
 
-The `SPLIT` function divides text around a specified character and places the fragments into separate cells.
-
-- Open the **Cosmetics Inc. - Data for Cleaning** spreadsheet.
-- In **cell F12**, an error appears due to a number being stored as text.
-- Select **column E (Orders)**.
-- From the menu, select **Data > Split text to columns** to remove quotation marks from **E12** and ensure the data is recognized as a number, resolving the error in **F12**.
+Create a chart to visualize data trends.
+- Select **column B (Prices)** in **Sheet 1**.
+- Navigate to **Insert > Chart**. If a column chart isn't automatically created, select **Column chart** from the dropdown menu.
+- Adjust the chart to check for outliers. For example, fix any errors in **cell B14** (price of $0.73) by changing it to $7.30, and the chart will update automatically.
 
 ## Best Practices
 
-- **Always double-check** your formulas to ensure they reference the correct cells and ranges.
-- **Use the TRIM function** regularly to clean up extra spaces that can cause errors in data processing.
-- **Use CONCATENATE** when you need to combine data from multiple columns into a single string for easier analysis.
+- Always make a **backup** of your dataset before performing significant data manipulations.
+- Use **pivot tables** to quickly summarize and view important data trends.
+- **VLOOKUP** can be extremely useful for finding related data across different sheets.
+- Regularly **trim** and **clean** your data to ensure consistency and accuracy.
 
 ## Conclusion
 
-By following these steps, you can efficiently clean and prepare the **Cosmetics Inc. - Data for Cleaning** dataset for further analysis. These functions and tools will help you transform your data into a more usable format and ensure consistency across your dataset.
+By following these steps, you can clean and analyze the **Cosmetics Inc. - Data for Cleaning** dataset efficiently, making it ready for further analysis and decision-making.
