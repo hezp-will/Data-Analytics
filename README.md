@@ -1,6 +1,6 @@
 # Data Analytics
 
-This repository showcases the skills and concepts I’ve learned in the first course of the Google Data Analytics Certificate. The course introduced key data analytics practices, tools, and processes, and provided hands-on experience with common tasks and tools used by junior data analysts.
+This repository showcases the skills and concepts I’ve learned in the 8 courses of the Google Data Analytics Certificate. The course introduced key data analytics practices, tools, and processes, and provided hands-on experience with common tasks and tools used by junior data analysts.
 
 ## Course Overview
 
